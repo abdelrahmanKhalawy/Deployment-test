@@ -1,0 +1,6 @@
+@SehhaTech.PatientPortal.API_HostAddress = http://localhost:5238
+
+GET {{SehhaTech.PatientPortal.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

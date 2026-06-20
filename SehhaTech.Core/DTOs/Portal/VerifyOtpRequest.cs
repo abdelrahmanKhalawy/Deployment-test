@@ -1,0 +1,17 @@
+using System.ComponentModel.DataAnnotations;
+using SehhaTech.Core.Models.Portal;
+
+namespace SehhaTech.Core.DTOs.Portal;
+
+public class VerifyOtpRequest
+{
+    [Required]
+    public string Phone { get; set; } = null!;
+
+    [Required]
+    [StringLength(6, MinimumLength = 6)]
+    public string Code { get; set; } = null!;
+
+    [Required]
+    public OTPPurpose Purpose { get; set; }
+}

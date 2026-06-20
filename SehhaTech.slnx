@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="SehhaTech.API/SehhaTech.API.csproj" />
+  <Project Path="SehhaTech.Core/SehhaTech.Core.csproj" />
+  <Project Path="SehhaTech.Infrastructure/SehhaTech.Infrastructure.csproj" />
+  <Project Path="SehhaTech.PatientPortal.API/SehhaTech.PatientPortal.API.csproj" />
+</Solution>

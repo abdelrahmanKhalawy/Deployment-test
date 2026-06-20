@@ -1,0 +1,12 @@
+C:\Users\abdu2\Desktop\DEPI-Project\src\SehhaTech.Core\bin\Debug\net10.0\SehhaTech.Core.deps.json
+C:\Users\abdu2\Desktop\DEPI-Project\src\SehhaTech.Core\bin\Debug\net10.0\SehhaTech.Core.dll
+C:\Users\abdu2\Desktop\DEPI-Project\src\SehhaTech.Core\bin\Debug\net10.0\SehhaTech.Core.pdb
+C:\Users\abdu2\Desktop\DEPI-Project\src\SehhaTech.Core\obj\Debug\net10.0\SehhaTech.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\abdu2\Desktop\DEPI-Project\src\SehhaTech.Core\obj\Debug\net10.0\SehhaTech.Core.AssemblyInfoInputs.cache
+C:\Users\abdu2\Desktop\DEPI-Project\src\SehhaTech.Core\obj\Debug\net10.0\SehhaTech.Core.AssemblyInfo.cs
+C:\Users\abdu2\Desktop\DEPI-Project\src\SehhaTech.Core\obj\Debug\net10.0\SehhaTech.Core.csproj.CoreCompileInputs.cache
+C:\Users\abdu2\Desktop\DEPI-Project\src\SehhaTech.Core\obj\Debug\net10.0\SehhaTech.Core.sourcelink.json
+C:\Users\abdu2\Desktop\DEPI-Project\src\SehhaTech.Core\obj\Debug\net10.0\SehhaTech.Core.dll
+C:\Users\abdu2\Desktop\DEPI-Project\src\SehhaTech.Core\obj\Debug\net10.0\refint\SehhaTech.Core.dll
+C:\Users\abdu2\Desktop\DEPI-Project\src\SehhaTech.Core\obj\Debug\net10.0\SehhaTech.Core.pdb
+C:\Users\abdu2\Desktop\DEPI-Project\src\SehhaTech.Core\obj\Debug\net10.0\ref\SehhaTech.Core.dll
