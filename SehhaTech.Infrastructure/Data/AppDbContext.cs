@@ -148,8 +148,8 @@ namespace SehhaTech.Infrastructure.Data
 
                 // Unique constraint - منع double booking
                 entity.HasIndex(b => new { b.DoctorId, b.SlotDate, b.SlotTime, b.TenantId })
-                      .IsUnique()
-                      .HasFilter("[Status] != 'Cancelled'");
+                .IsUnique();
+
 
                 entity.HasOne(b => b.PortalUser)
                       .WithMany(u => u.Bookings)

@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using Microsoft.Extensions.Configuration;
 
 namespace SehhaTech.Infrastructure.Data
 {
@@ -9,8 +8,7 @@ namespace SehhaTech.Infrastructure.Data
         public AppDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-            optionsBuilder.UseSqlServer("Server=.;Database=SehhaTechDB;Trusted_Connection=True;TrustServerCertificate=True");
-
+            optionsBuilder.UseNpgsql("Host=reseau.proxy.rlwy.net;Port=38078;Database=railway;Username=postgres;Password=ygqTkolrLwrNuwhguExwtdYtZwDSmsQn");
             return new AppDbContext(optionsBuilder.Options);
         }
     }
