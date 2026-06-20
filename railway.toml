@@ -1,11 +1,3 @@
-[phases.setup]
-nixPkgs = ["dotnet-sdk_10"]
-
-[phases.install]
-cmds = ["dotnet restore SehhaTech.slnx"]
-
-[phases.build]
-cmds = ["dotnet publish SehhaTech.API/SehhaTech.API.csproj -c Release -o out"]
-
-[start]
-cmd = "dotnet out/SehhaTech.API.dll"
+[build]
+builder = "dockerfile"
+dockerfilePath = "Dockerfile"
