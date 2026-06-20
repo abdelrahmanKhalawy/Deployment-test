@@ -1,0 +1,8 @@
+[build]
+builder = "nixpacks"
+
+[build.env]
+NIXPACKS_BUILD_CMD = "dotnet publish src/SehhaTech.API/SehhaTech.API.csproj -c Release -o /app/publish"
+
+[start]
+cmd = "dotnet /app/publish/SehhaTech.API.dll"
