@@ -1,8 +1,11 @@
-[build]
-builder = "nixpacks"
+[phases.setup]
+nixPkgs = ["dotnet-sdk_10"]
 
-[build.env]
-NIXPACKS_BUILD_CMD = "dotnet publish SehhaTech.API/SehhaTech.API.csproj -c Release -o /app/publish"
+[phases.install]
+cmds = ["dotnet restore SehhaTech.slnx"]
+
+[phases.build]
+cmds = ["dotnet publish SehhaTech.API/SehhaTech.API.csproj -c Release -o out"]
 
 [start]
-cmd = "dotnet /app/publish/SehhaTech.API.dll"
+cmd = "dotnet out/SehhaTech.API.dll"
