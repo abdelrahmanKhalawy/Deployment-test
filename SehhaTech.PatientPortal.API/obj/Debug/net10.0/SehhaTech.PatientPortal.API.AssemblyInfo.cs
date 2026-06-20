@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SehhaTech.PatientPortal.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3b196da6cf7650978c4da09e47a695f903fbcf6a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f4e3b5ae46c779d05a67d578b9a6b829b3647bbc")]
 [assembly: System.Reflection.AssemblyProductAttribute("SehhaTech.PatientPortal.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SehhaTech.PatientPortal.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
