@@ -84,7 +84,7 @@ public class DoctorController : ControllerBase
             });
         }
 
-        var today = DateTime.Today;
+        var today = DateTime.SpecifyKind(DateTime.Today, DateTimeKind.Utc);
         var tomorrow = today.AddDays(1);
 
         var appointments = await _context.Appointments
@@ -127,11 +127,13 @@ public class DoctorController : ControllerBase
             });
         }
 
+        var now = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc);
+
         var appointments = await _context.Appointments
             .Where(a =>
                 a.DoctorId == doctor.Id &&
                 a.TenantId == doctor.TenantId &&
-                a.AppointmentDate > DateTime.Now)
+                a.AppointmentDate > now)
             .OrderBy(a => a.AppointmentDate)
             .Select(a => new
             {
@@ -334,8 +336,9 @@ public class DoctorController : ControllerBase
             });
         }
 
-        var today = DateTime.Today;
+        var today = DateTime.SpecifyKind(DateTime.Today, DateTimeKind.Utc);
         var tomorrow = today.AddDays(1);
+        var now = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc);
 
         // Today's appointments
         var todayAppointments = await _context.Appointments
@@ -360,7 +363,7 @@ public class DoctorController : ControllerBase
             .Where(a =>
                 a.DoctorId == doctor.Id &&
                 a.TenantId == doctor.TenantId &&
-                a.AppointmentDate > DateTime.Now)
+                a.AppointmentDate > now)
             .OrderBy(a => a.AppointmentDate)
             .Take(3)
             .Select(a => new
