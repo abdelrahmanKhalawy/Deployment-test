@@ -73,7 +73,7 @@ export default function DoctorProfile() {
             if (photoFile) {
                 const formData = new FormData();
                 formData.append("file", photoFile);
-                const uploadRes = await api.post("/api/upload", formData, {
+                    const uploadRes = await api.post("/api/upload/image", formData, {
                     headers: { "Content-Type": "multipart/form-data" },
                 });
                 photoUrl =
