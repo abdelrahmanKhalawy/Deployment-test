@@ -18,7 +18,7 @@ namespace SehhaTech.Infrastructure.Services
         // ─── Dashboard ───────────────────────────────────────────
         public async Task<AdminDashboardDto> GetDashboardAsync(int tenantId)
         {
-            var today = DateTime.Today;
+            var today = DateTime.SpecifyKind(DateTime.Today, DateTimeKind.Utc);
 
             var totalDoctors = await _db.Users
                 .CountAsync(u => u.TenantId == tenantId && u.Role == UserRole.Doctor && u.IsActive);
@@ -33,7 +33,7 @@ namespace SehhaTech.Infrastructure.Services
                 .Include(a => a.Patient)
                 .Include(a => a.Doctor).ThenInclude(d => d!.User)
                 .Where(a => a.TenantId == tenantId
-                         && a.AppointmentDate >= DateTime.Now
+                         && a.AppointmentDate >= DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc)
                          && a.Status == AppointmentStatus.Scheduled)
                 .OrderBy(a => a.AppointmentDate)
                 .Take(5)
@@ -63,7 +63,7 @@ namespace SehhaTech.Infrastructure.Services
 
             var rawChart = await _db.Appointments
                 .Where(a => a.TenantId == tenantId &&
-                            a.AppointmentDate >= DateTime.Today.AddDays(-7))
+                            a.AppointmentDate >= DateTime.SpecifyKind(DateTime.Today.AddDays(-7), DateTimeKind.Utc))
                 .GroupBy(a => a.AppointmentDate.Date)
                 .Select(g => new
                 {
