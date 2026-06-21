@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SehhaTech.Core.Models;
 using SehhaTech.Core.Models.Portal;
-using SehhaTech.Core.Models.Portal;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace SehhaTech.Infrastructure.Data
 {
@@ -200,6 +200,25 @@ namespace SehhaTech.Infrastructure.Data
                     .HasForeignKey(x => x.AppointmentId)
                     .OnDelete(DeleteBehavior.Restrict);
             });
+            // تحويل أي DateTime يتخزن أو يتقرأ يكون UTC (مطلوب لـ PostgreSQL)
+            foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+            {
+                foreach (var property in entityType.GetProperties())
+                {
+                    if (property.ClrType == typeof(DateTime))
+                    {
+                        property.SetValueConverter(new ValueConverter<DateTime, DateTime>(
+                            v => v.Kind == DateTimeKind.Utc ? v : DateTime.SpecifyKind(v, DateTimeKind.Utc),
+                            v => DateTime.SpecifyKind(v, DateTimeKind.Utc)));
+                    }
+                    else if (property.ClrType == typeof(DateTime?))
+                    {
+                        property.SetValueConverter(new ValueConverter<DateTime?, DateTime?>(
+                            v => v.HasValue ? DateTime.SpecifyKind(v.Value, DateTimeKind.Utc) : v,
+                            v => v.HasValue ? DateTime.SpecifyKind(v.Value, DateTimeKind.Utc) : v));
+                    }
+                }
+            }
         }
     }
 }
